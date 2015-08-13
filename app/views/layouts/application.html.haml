@@ -2,9 +2,17 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Orient
+    %meta{:charset => "UTF-8"}/
+    %title= (title = yield :title).blank? ? "Orient" : title
+    %meta{:content => "Orient Keyword", :name => "keywords"}/
+    %meta{:content => "Orient description", :name => "description"}/
+    %meta{:content => "Orient", :name => "author"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    = yield
+    = yield :meta_tags
+  %body{class: "#{body_class}"}
+    = render partial: "alert"
+    .container
+      = yield
