@@ -17,7 +17,8 @@ Bundler.require(*Rails.groups)
 
 module Orient
   class Application < Rails::Application
-    config.time_zone = 'Kuala Lumpur'
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.time_zone = 'Asia/Kuala Lumpur'
     config.encoding = "utf-8"
     config.active_record.raise_in_transactional_callbacks = true
   end
