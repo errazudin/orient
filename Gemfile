@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_config'
 gem 'devise'
 gem 'haml-rails', '~> 0.9'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'quiet_assets'
