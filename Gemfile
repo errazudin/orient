@@ -12,9 +12,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'rails_config'
 
 # add additional gems below this line
+gem 'rails_config'
+gem 'devise'
 
 group :development do
   gem 'quiet_assets'
