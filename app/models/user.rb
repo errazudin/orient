@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  enum role: [:user, :admin]
+  after_initialize :set_default_role, :if => :new_record?
 
   attr_accessor :login
 
@@ -16,5 +18,9 @@ class User < ActiveRecord::Base
         where(username: conditions[:username]).first
       end
     end
+  end
+
+  def set_default_role
+    self.role ||= :user
   end
 end
