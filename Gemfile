@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # add additional gems below this line
-gem 'rails_config'
+gem 'config'
 gem 'devise'
 gem 'haml-rails', '~> 0.9'
 gem 'jquery-turbolinks'
